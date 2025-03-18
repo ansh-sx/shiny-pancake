@@ -47,9 +47,9 @@ export default function Home() {
 
                 <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
                   <p className="text-lg mb-6">
-                    I bring a unique creative vision to every project, delivering outstanding results.
+                    Want to build something cool?
                   </p>
-                  <p className="text-lg mb-6">Jut a llorem tht a dha om dkmsfsjvsjbk</p>
+                  <p className="text-lg mb-6">I’ll bring the prompts, GPT brings the code — together, we’ll fake it till we make it.</p>
                 </motion.section>
 
                 
