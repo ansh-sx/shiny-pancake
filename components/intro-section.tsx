@@ -9,7 +9,7 @@ export default function IntroSection() {
         <p className="text-lg mb-4">I don’t write a lot of code — I write prompts, fix errors, and pretend I knew the solution all along.</p>
         <p className="text-lg mb-4">Still learning, still building, and yes, still copy-pasting from ChatGPT like it’s a superpower.</p>
         <p className="text-lg mb-8 ">
-          If it runs, it’s mine. If it breaks, blame the AI .. simple 😌
+          If it runs, it’s mine. If it breaks, blame the AI 😌
         </p>
       </div>
 
