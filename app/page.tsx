@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
         <>
-          <div className="mt-2 flex justify-center">
+          <div className=" flex justify-center">
             <ProfileIsland initialAnimation={false} />
           </div>
 
@@ -30,6 +30,9 @@ export default function Home() {
 
                 <motion.section className="mb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
                   <p className="text-lg mb-4">I have 10years+ experience</p>
+                  <motion.div className="mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
+                  <SkillsSection />
+                </motion.div>
                   <p className="p-text text-lg mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
                   <motion.div className="mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
@@ -49,9 +52,7 @@ export default function Home() {
                   <p className="text-lg mb-6">Jut a llorem tht a dha om dkmsfsjvsjbk</p>
                 </motion.section>
 
-                <motion.div className="mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
-                  <SkillsSection />
-                </motion.div>
+                
 
                 <motion.div className="flex space-x-4 mb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
                   <a
