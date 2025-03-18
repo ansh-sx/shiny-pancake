@@ -33,7 +33,7 @@ export default function Home() {
                   <motion.div className="mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
                   <SkillsSection />
                 </motion.div>
-                  <p className="p-text text-lg mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="p-text text-lg mb-12"><span className="bg-blue-100 text-blue-500 px-2 py-1 rounded-md">Spoiler</span>: These clients don’t know I spent 90% of the time writing prompts, not code.</p>
 
                   <motion.div className="mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
                     <ClientLogos />
