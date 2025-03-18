@@ -17,7 +17,7 @@ export default function SkillsSection() {
             src="/placeholder.svg?height=300&width=400"
             alt="Skills and Tech Stack"
             width={400}
-            height={300}
+            
             className="rounded-lg w-full h-auto"
           />
         </motion.div>
