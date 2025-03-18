@@ -5,9 +5,8 @@ import Image from "next/image"
 
 export default function SkillsSection() {
   return (
-    <section className="mb-8">
-      <h2 className="text-center text-lg font-medium mb-6">Skills & Tech Stack</h2>
-
+    <section className="grid items-center justify-center mx-auto max-w-[420px] mb-8">
+      
       <div className="bg-gray-50 rounded-xl p-4 overflow-hidden">
         <motion.div
           className="aspect-video relative"
@@ -23,6 +22,8 @@ export default function SkillsSection() {
           />
         </motion.div>
       </div>
+      <hr className="border-t w-[420px] border-[#bfbfbf]  mx-auto mb-2" />
+      <p className="text-sm text-gray-400 text-center ">My Recent Projects</p>
     </section>
   )
 }
