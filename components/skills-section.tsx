@@ -7,7 +7,7 @@ export default function SkillsSection() {
   return (
     <section className="grid items-center justify-center mx-auto max-w-[420px] mb-8">
       
-      <div className="bg-gray-50 rounded-xl p-4 overflow-hidden">
+      <div className="bg-gray-50 rounded-xl mb-4 overflow-hidden">
         <motion.div
           className="aspect-video relative"
           whileHover={{ scale: 1.02 }}
@@ -23,7 +23,7 @@ export default function SkillsSection() {
         </motion.div>
       </div>
       <hr className="border-t w-[420px] border-[#bfbfbf]  mx-auto mb-2" />
-      <p className="text-sm text-gray-400 text-center ">My Recent Projects</p>
+      <p className="text-sm text-gray-400 text-center ">My Skills & Tech Stack</p>
     </section>
   )
 }
