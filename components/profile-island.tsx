@@ -14,7 +14,7 @@ export default function ProfileIsland({ initialAnimation = false }: ProfileIslan
   const personalInfo = {
     age: "17",
     email: "anshsxa@gmail.com",
-    phone: "+91 9149871270",
+    whatsapp: "+91 9149871270",
     location: "Jammu, India",
   }
 
