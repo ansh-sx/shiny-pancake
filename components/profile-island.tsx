@@ -20,70 +20,45 @@ export default function ProfileIsland({ initialAnimation = false }: ProfileIslan
 
   useEffect(() => {
     if (initialAnimation) {
-      const timer = setTimeout(() => {
-        setAnimationComplete(true)
-      }, 3000)
+      const timer = setTimeout(() => setAnimationComplete(true), 1800)
       return () => clearTimeout(timer)
     }
   }, [initialAnimation])
 
   if (initialAnimation && !animationComplete) {
     return (
-      <div className="fixed inset-0 flex flex-col items-center justify-center z-50">
-        {/* Capsule expanding */}
+      <div className="fixed inset-0 flex flex-col items-center justify-center z-50 bg-white">
         <motion.div
           className="bg-[#F4F4F4] rounded-full absolute"
-          initial={{ width: 0, height: 64, opacity: 0 }}
-          animate={{
-            width: [0, 10, 425, 425],
-            height: [0, 64, 64, 64],
-            opacity: [0, 1, 1, 1],
-            y: [0, 0, 0, 0],
-          }}
-          transition={{ duration: 1.5, ease: "easeInOut", times: [0, 0.3, 0.6, 1] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          style={{ width: "425px", height: "64px" }}
         />
 
-        {/* Profile Info + Button */}
         <motion.div
           className="absolute flex items-center justify-between px-4 py-3 w-[425px] z-10"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            y: -180,
-          }}
-          transition={{ delay: 1.6, duration: 0.6, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6, ease: "easeInOut" }}
         >
           <div className="flex items-center">
-            <motion.img
+            <img
               src="https://raw.githubusercontent.com/ansh-sx/shiny-pancake/main/MOOD%20(2).png"
               alt="Avatar"
               className="w-10 h-10 rounded-full"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.7, duration: 0.5 }}
             />
-            <motion.span
-              className="ml-3 text-lg font-medium"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.9, duration: 0.4 }}
-            >
-              Ansh Sharma
-            </motion.span>
+            <span className="ml-3 text-lg font-medium">Ansh Sharma</span>
           </div>
 
-          <motion.a
+          <a
             href="https://wa.me/919149871270"
             target="_blank"
             className="px-4 py-2 text-white bg-black cursor-pointer rounded-full"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2.1, duration: 0.4 }}
             rel="noreferrer"
           >
             Message Me
-          </motion.a>
+          </a>
         </motion.div>
       </div>
     )
@@ -91,7 +66,6 @@ export default function ProfileIsland({ initialAnimation = false }: ProfileIslan
 
   return (
     <div className="w-full">
-      {/* Final shifted position capsule */}
       <motion.div
         className="bg-[#F4F4F4] rounded-full cursor-pointer relative overflow-hidden mx-auto mt-10"
         animate={{
@@ -99,11 +73,7 @@ export default function ProfileIsland({ initialAnimation = false }: ProfileIslan
           height: isExpanded ? "160px" : "64px",
           borderRadius: isExpanded ? "1rem" : "2rem",
         }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 30,
-        }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex items-center justify-between px-3 py-3">
@@ -129,10 +99,10 @@ export default function ProfileIsland({ initialAnimation = false }: ProfileIslan
           {isExpanded && (
             <motion.div
               className="p-6 grid grid-cols-2 gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               {Object.entries(personalInfo).map(([key, value]) => (
                 <div key={key} className="text-sm">
@@ -145,15 +115,14 @@ export default function ProfileIsland({ initialAnimation = false }: ProfileIslan
         </AnimatePresence>
       </motion.div>
 
-      {/* Content after island */}
       <motion.div
         className="mt-10"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.8, duration: 0.6 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.6, ease: "easeInOut" }}
       >
         {/* Add your other content below here */}
       </motion.div>
     </div>
   )
-        }
+}
