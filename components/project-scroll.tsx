@@ -32,12 +32,15 @@ export default function ProjectScroll() {
   return (
     <div className="overflow-x-auto">
       <div className="flex gap-6 pb-6 min-w-full md:grid md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <div
+        {projects.map((project, index) => (
+          <motion.div
             key={project.id}
             className="relative min-w-[300px] md:min-w-0"
             onMouseEnter={() => setHoveredId(project.id)}
             onMouseLeave={() => setHoveredId(null)}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 + 0.2 }}
           >
             <div className="aspect-square rounded-lg overflow-hidden relative">
               <Image
@@ -63,8 +66,7 @@ export default function ProjectScroll() {
                     >
                       <Link
                         href={`/product/${project.id}`}
-                        className="bg-[#999999] px-4 py-3 rounded-full font-medium text-white 
-                                 "
+                        className="bg-[#999999] px-4 py-3 rounded-full font-medium text-white"
                       >
                         View
                       </Link>
@@ -78,7 +80,7 @@ export default function ProjectScroll() {
               <h3 className="font-semibold">{project.title}</h3>
               <p className="text-sm text-gray-500">{project.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
