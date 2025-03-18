@@ -24,12 +24,12 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
               >
-                <motion.div className="mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
+                <motion.div className="mb-12" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
                   <IntroSection />
                 </motion.div>
 
                 <motion.section className="mb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
-                  <p className="text-lg mb-4">In conclusion, I'm a professional prompt engineer who lets ChatGPT do most of the actual coding.</p>
+                  <p className="text-lg mb-8">In conclusion, I'm a professional prompt engineer who lets ChatGPT do most of the actual coding.</p>
                   <motion.div className="mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
                   <SkillsSection />
                 </motion.div>
