@@ -20,102 +20,80 @@ export default function ProfileIsland({ initialAnimation = false }: ProfileIslan
 
   useEffect(() => {
     if (initialAnimation) {
-      // Mark animation as complete after it finishes
       const timer = setTimeout(() => {
         setAnimationComplete(true)
       }, 3000)
-
       return () => clearTimeout(timer)
     }
   }, [initialAnimation])
 
-  if (initialAnimation) {
+  if (initialAnimation && !animationComplete) {
     return (
-      <div className="fixed inset-0 flex flex-col items-center justify-center">
-        {/* Step 1: Name appears at center */}
-        <motion.div
-          className="relative z-20"
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: [0, 1, 1, 1, 1],
-            y: [0, 0, 0, -150, -150],
-          }}
-          transition={{
-            duration: 3,
-            times: [0, 0.1, 0.3, 0.7, 1],
-          }}
-        >
-          <motion.span className="text-2xl font-medium">Ansh Sharma</motion.span>
-        </motion.div>
-
-        {/* Step 2-3: Circle appears and expands */}
+      <div className="fixed inset-0 flex flex-col items-center justify-center z-50">
+        {/* Capsule expanding */}
         <motion.div
           className="bg-[#F4F4F4] rounded-full absolute"
-          initial={{
-            width: 0,
-            height: 64,
-            opacity: 0,
-          }}
+          initial={{ width: 0, height: 64, opacity: 0 }}
           animate={{
             width: [0, 10, 425, 425],
             height: [0, 64, 64, 64],
             opacity: [0, 1, 1, 1],
-            y: [0, 0, 0, -150],
+            y: [0, 0, 0, 0],
           }}
-          transition={{
-            duration: 3,
-            times: [0, 0.2, 0.5, 0.7],
-          }}
-        >
-          <div className="h-16 flex items-center justify-between px-3 py-3 relative">
-            {/* Step 4: Profile image appears */}
-            <motion.div className="flex items-center">
-              <motion.img
-                src="https://raw.githubusercontent.com/ansh-sx/shiny-pancake/main/MOOD%20(2).png"
-                alt="Avatar"
-                className="w-10 h-10 rounded-full"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{
-                  opacity: [0, 0, 0, 1],
-                  scale: [0, 0, 0, 1.2, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  times: [0, 0.4, 0.5, 0.6, 0.7],
-                }}
-              />
-              <span className="ml-3 text-lg font-medium opacity-0">Ansh Sharma</span>
-            </motion.div>
+          transition={{ duration: 1.5, ease: "easeInOut", times: [0, 0.3, 0.6, 1] }}
+        />
 
-            {/* Step 4: Button appears */}
-            <motion.a
-              href="https://wa.me/919149871270"
-              target="_blank"
-              className="px-4 py-2 text-white bg-black cursor-pointer rounded-full"
+        {/* Profile Info + Button */}
+        <motion.div
+          className="absolute flex items-center justify-between px-4 py-3 w-[425px] z-10"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: -180,
+          }}
+          transition={{ delay: 1.6, duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="flex items-center">
+            <motion.img
+              src="https://raw.githubusercontent.com/ansh-sx/shiny-pancake/main/MOOD%20(2).png"
+              alt="Avatar"
+              className="w-10 h-10 rounded-full"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{
-                opacity: [0, 0, 0, 1],
-                scale: [0, 0, 0, 1.2, 1],
-              }}
-              transition={{
-                duration: 3,
-                times: [0, 0.4, 0.5, 0.6, 0.7],
-              }}
-              rel="noreferrer"
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.7, duration: 0.5 }}
+            />
+            <motion.span
+              className="ml-3 text-lg font-medium"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.9, duration: 0.4 }}
             >
-              Message Me
-            </motion.a>
+              Ansh Sharma
+            </motion.span>
           </div>
+
+          <motion.a
+            href="https://wa.me/919149871270"
+            target="_blank"
+            className="px-4 py-2 text-white bg-black cursor-pointer rounded-full"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 2.1, duration: 0.4 }}
+            rel="noreferrer"
+          >
+            Message Me
+          </motion.a>
         </motion.div>
       </div>
     )
   }
 
-  // Regular non-animated component
   return (
     <div className="w-full">
+      {/* Final shifted position capsule */}
       <motion.div
-        className="bg-[#F4F4F4] rounded-full cursor-pointer relative overflow-hidden mx-auto"
+        className="bg-[#F4F4F4] rounded-full cursor-pointer relative overflow-hidden mx-auto mt-10"
         animate={{
           width: "425px",
           height: isExpanded ? "160px" : "64px",
@@ -166,7 +144,16 @@ export default function ProfileIsland({ initialAnimation = false }: ProfileIslan
           )}
         </AnimatePresence>
       </motion.div>
+
+      {/* Content after island */}
+      <motion.div
+        className="mt-10"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.8, duration: 0.6 }}
+      >
+        {/* Add your other content below here */}
+      </motion.div>
     </div>
   )
-}
-
+        }
