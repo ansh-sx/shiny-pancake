@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
         <>
-          <div className="mt-2 mb-2 flex justify-center">
+          <div className="mt-2 flex justify-center">
             <ProfileIsland initialAnimation={false} />
           </div>
 
