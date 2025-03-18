@@ -8,32 +8,16 @@ import ClientLogos from "@/components/client-logos"
 import SkillsSection from "@/components/skills-section"
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
-  const [showContent, setShowContent] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false)
-      const contentTimer = setTimeout(() => {
-        setShowContent(true)
-      }, 300)
-      return () => clearTimeout(contentTimer)
-    }, 1000)
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <div className="min-h-screen bg-white">
-      {loading ? (
-        <ProfileIsland initialAnimation={true} />
-      ) : (
         <>
-          <div className="mt-4 mb-12 flex justify-center">
+          <div className="mt-2 mb-2 flex justify-center">
             <ProfileIsland initialAnimation={false} />
           </div>
 
           <AnimatePresence>
-            {showContent && (
+            
               <motion.main
                 className="items-center justify-center mx-auto max-w-[420px] pb-16"
                 initial={{ opacity: 0 }}
@@ -121,10 +105,9 @@ export default function Home() {
                   </a>
                 </motion.div>
               </motion.main>
-            )}
+            
           </AnimatePresence>
-        </>
-      )}
+             </>
     </div>
   )
                     }
