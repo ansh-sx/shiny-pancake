@@ -3,12 +3,13 @@ export default function IntroSection() {
     <div className="grid items-center justify-center mx-auto max-w-[420px]">
       <div className="max-w-3xl">
         <p className="text-lg mb-4">
-          Meet your trusted design partner <span className="bg-blue-100 text-blue-500 px-2 py-1 rounded-md">Sajon</span>
-          , a design-focused engineer who enjoys designing.
+          Hey, I’m <span className="bg-blue-100 text-blue-500 px-2 py-1 rounded-md">Ansh</span>
+           ,a 17-year-old web and app developer (read: professional prompt engineer who lets ChatGPT do most of the actual coding).
         </p>
+        <p className="text-lg mb-4">I don’t write a lot of code — I write prompts, fix errors, and pretend I knew the solution all along.</p>
+        <p className="text-lg mb-4">Still learning, still building, and yes, still copy-pasting from ChatGPT like it’s a superpower.</p>
         <p className="text-lg mb-8 ">
-          A multidisciplinary designer who crafting strong brands for SaaS products, Website, and Apps with a deep
-          understanding of user needs.
+          If it runs, it’s mine. If it breaks, blame the AI .. simple 😌
         </p>
       </div>
 
