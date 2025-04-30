@@ -10,7 +10,7 @@ import SkillsSection from "@/components/skills-section"
 export default function Home() {  
   
   return (  
-    <div className="flex flex-col justify-center items-center min-h-screen bg-white px-6 m-4 md:px-0">  
+    <div className="flex flex-col justify-center items-center min-h-screen bg-white mx-auto max-w-[420px]">  
         <>  
           <div className=" flex justify-center">  
             <ProfileIsland initialAnimation={false} />  
