@@ -14,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="p-6 sm:p-0">{children}</body>
+      <body className="px-4 sm:px-0">
+  <div className="max-w-screen-sm mx-auto w-full">
+    {children}
+  </div>
+</body>
     </html>
   )
 }
